@@ -53,3 +53,21 @@ export const setLoggedInUserSessionStorage = (userObj) => {
 export const setLoggedInUserAppState = (userObj) => {
   loggedInUser = userObj;
 }
+
+export const checkIfAdmin = (userObj) => {
+  console.log(userObj)
+  if(userObj === null){
+    return ""
+  }
+  if (userObj.isAdmin) {
+    return `<li class="nav-item">
+    <p class="nav-link" id="allOrders">All Orders</p>
+    </li>`
+   } 
+  else {
+    return `<li class="nav-item">
+    <p class="nav-link" id="myOrders">My Orders</p>
+    </li>`
+  } 
+    
+}

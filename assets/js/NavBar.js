@@ -43,6 +43,8 @@ export const NavBar = () => {
         }
     }
 
+    const currentUser = JSON.parse(sessionStorage.getItem("SOuser"))
+
     headerElement.innerHTML = `
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
         
@@ -61,9 +63,7 @@ export const NavBar = () => {
                         <p class="nav-link" aria-current="page" id="menu">Menu</p>
                     </li>
                     <!-- Only show my order once you login -->
-                    <!-- <li class="nav-item">
-                        <p class="nav-link" id="myOrders">My Orders</p>
-                    </li> -->
+                    ${UserManager.checkIfAdmin(currentUser)}
                     <li class="nav-item">
                     ${showLogin()}
                     </li>
