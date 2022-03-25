@@ -29,19 +29,19 @@ headerElement.addEventListener("click", event => {
 ///////////// end event listeners /////////////////////
 
 
-// const checkForUser = () => {
-//     if (sessionStorage.getItem("SOUser")){
-//       UserManager.setLoggedInUser(JSON.parse(sessionStorage.getItem("SOUser")));
-//     }
-//     //   startSO();
-//     // }else {
-//     //   //show login/register
-//     //   console.log("no user showLogin")
-//     // }
+const checkForUser = () => {
+    if (sessionStorage.getItem("SOUser")){
+      UserManager.setLoggedInUser(JSON.parse(sessionStorage.getItem("SOUser")));
+      startSO();
+    }
+    else {
+      //show login/register
+      console.log("no user showLogin")
+    }
 
-//     NavBar();
-//     contentElement.innerHTML = FoodList();
-//   }
+    NavBar();
+    contentElement.innerHTML = FoodList();
+  }
 
 const showLoginRegister = () => {
     showNavBar();
@@ -63,5 +63,5 @@ const startSO = () => {
 }
 
 // application checks for a user
-// checkForUser();
+checkForUser();
 startSO()
