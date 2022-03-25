@@ -1,4 +1,4 @@
-// let loggedInUser = {
+//  loggedInUser = {
 //     id: 1,
 //     name: "Bryan",
 //     email: "bryan@bn.com",
@@ -22,13 +22,27 @@ export const loginUser = (userObj) => {
     .then(parsedUser => {
       //is there a user?
       if (parsedUser.length > 0){
+        window.alert(`Welcome back ${parsedUser[0].name}!`)
         setLoggedInUserSessionStorage(parsedUser[0]);
         return getLoggedInUser();
       }else {
         //no user
-        return false;
+       return alert("No user found")
       }
     })
+  }
+
+  export const registerUser = (userObj) => {
+    const fetchOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userObj)
+    }
+
+    return fetch(`http://localhost:8088/users`, fetchOptions)
+    
   }
 
 export const setLoggedInUserSessionStorage = (userObj) => {

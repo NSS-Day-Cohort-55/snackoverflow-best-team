@@ -1,3 +1,11 @@
+const orderButton = () => {
+    const currentUser = sessionStorage.getItem("SOuser")
+    if (currentUser){
+        return `<button type="button" value ="orderButton" class="btn btn-primary">Order</button>
+                <p class="menu--item--quantity">Quantity: </p>`
+    } else {return ""}
+}
+
 export const FoodCard = (foodObj) => {
 
     if (foodObj.isVegetarian) {
@@ -12,10 +20,8 @@ export const FoodCard = (foodObj) => {
                 <p class="card-text">${foodObj.description}</p>
                 <img src="./assets/images/icon-veg.png">
                 <p>Price: $${foodObj.price}</p>
-              
-                <button type="button" value ="orderButton" class="btn btn-primary">Order</button>
 
-                <p class="menu--item--quantity">Quantity: </p>
+                ${orderButton()}
             </div>
         </div>
     </div>

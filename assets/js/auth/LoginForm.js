@@ -2,23 +2,24 @@ import * as UserManager from "./UserManager.js";
 import { NavBar } from "../NavBar.js";
 import { FoodList } from "../menu/FoodsList.js";
 
-export const LoginForm = () => {
-  const contentElement = document.querySelector("main");
- 
-  contentElement.addEventListener("click", event => {
-    if (event.target.id === "login__submit"){
-      const userObject = {
-        name: document.querySelector("#login_name").value,
-        email: document.querySelector("#login_email").value,
-      }
-      UserManager.loginUser(userObject).then(() => {
-        NavBar();
-        FoodList()
-      })
-     
+const contentElement = document.querySelector("main");
+contentElement.addEventListener("click", event => {
+  if (event.target.id === "login__submit"){
+    const userObject = {
+      name: document.querySelector("#login_name").value,
+      email: document.querySelector("#login_email").value,
     }
+    UserManager.loginUser(userObject).then(() => {
+      NavBar();
+      FoodList()
+    })
+   
+  }
 
-  })
+})
+
+export const LoginForm = () => {
+  
 	return `
   <div>
 		<h3>Login</h3>
