@@ -149,6 +149,14 @@
       "id": 2
     }
   ],
-  "orders": [],
+  "orders": [
+      {
+          "id": 1,
+          "userId": 1,
+          "notes": "oh yeah",
+          "timestamp": "",
+          "isPickedUp": false
+      }
+  ],
   "orderFoods": []
 }

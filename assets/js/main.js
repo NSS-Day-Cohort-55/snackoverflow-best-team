@@ -7,6 +7,7 @@ import { NavBar } from "./NavBar.js";
 import * as UserManager from './auth/UserManager.js';
 import { CheckForUser } from "./auth/CheckForUser.js";
 import { Footer } from "./Footer.js";
+import { makeOrderList } from "./menu/orders.js";
 
 ////////////// app declarations ///////////////////////
 // const headerElement = document.querySelector("header");
@@ -25,6 +26,14 @@ headerElement.addEventListener("click", event => {
 })
 
 
+document.addEventListener("click", event => {
+    if (event.target.id === "allOrders"){
+        contentElement.innerHTML = makeOrderList()
+    }
+    else if (event.target.id === "myOrders"){
+
+    }
+})
 
 ///////////// end event listeners /////////////////////
 
