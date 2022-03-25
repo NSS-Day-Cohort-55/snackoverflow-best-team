@@ -158,5 +158,11 @@
           "isPickedUp": false
       }
   ],
-  "orderFoods": []
+  "orderFoods": [
+    {
+      "id": 1,
+      "orderId": 1,
+      "foodId": 3
+    }
+  ]
 }
